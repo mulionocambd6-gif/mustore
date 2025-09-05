@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MU STORE - Top Up Game & Sewa Squad</title>
+    <style>
+      :root { --kuning: #ffcc00; --hitam: #121212; --abu: #1e1e1e; --putih: #fff; }
+      body { margin: 0; font-family: "Segoe UI", Tahoma, sans-serif; background: var(--abu); color: var(--putih); scroll-behavior: smooth; }
+      header { background: var(--hitam); display: flex; justify-content: space-between; align-items: center; padding: 15px 40px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 3px 10px rgba(0,0,0,0.6); }
+      header h1 { color: var(--kuning); margin: 0; font-size: 20px; letter-spacing: 1px; }
+      nav a { color: var(--putih); margin-left: 25px; text-decoration: none; font-weight: 600; position: relative; }
+      nav a::after { content: ""; position: absolute; width: 0%; height: 2px; background: var(--kuning); left: 0; bottom: -5px; transition: 0.3s; }
+      nav a:hover::after { width: 100%; } nav a:hover { color: var(--kuning); }
+      .slider { position: relative; width: 100%; height: 300px; overflow: hidden; }
+      .slides { display: flex; width: 300%; animation: slide 12s infinite; }
+      .slides img { width: 100%; object-fit: cover; transition: transform 0.8s; }
+      .slides img:hover { transform: scale(1.05); }
+      @keyframes slide { 0%,30%{margin-left:0;}33%,63%{margin-left:-100%;}66%,96%{margin-left:-200%;}100%{margin-left:0;} }
+      section { padding: 40px; } section h2 { margin-bottom: 20px; color: var(--kuning); font-size: 24px; }
+      .populer { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 20px; }
+      .populer-card { background: var(--hitam); border-radius: 10px; overflow: hidden; position: relative; transition: 0.3s; display: block; text-decoration: none; color: inherit; }
+      .populer-card:hover { transform: scale(1.03); box-shadow: 0 0 20px rgba(255,204,0,0.4); }
+      .populer-card img { width: 100%; height: 150px; object-fit: cover; filter: brightness(0.7); transition: transform 0.5s; }
+      .populer-card:hover img { transform: scale(1.08); }
+      .populer-card span { position: absolute; bottom: 15px; left: 15px; background: var(--kuning); padding: 8px 15px; border-radius: 6px; font-weight: bold; }
+      .game-list { display: grid; grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); gap: 25px; }
+      .game-card { background: var(--hitam); border-radius: 15px; text-align: center; padding: 20px 10px; transition: 0.3s; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.5); position: relative; overflow: hidden; display: block; text-decoration: none; color: inherit; }
+      .game-card:hover { transform: translateY(-5px); box-shadow: 0 0 25px rgba(255,204,0,0.5); }
+      .game-card img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 3px solid var(--kuning); transition: transform 0.5s; }
+      .game-card:hover img { transform: rotate(5deg) scale(1.1); }
+      .sold { display: block; margin-top: 6px; font-size: 13px; color: #bbb; }
+      .rating { display: block; margin-top: 3px; font-size: 14px; color: gold; }
+      .squad-list { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 20px; }
+      .squad-card { background: var(--hitam); border-radius: 12px; padding: 20px; text-align: center; transition: 0.3s; position: relative; overflow: hidden; display: block; text-decoration: none; color: inherit; }
+      .squad-card:hover { transform: translateY(-5px); box-shadow: 0 0 25px rgba(255,204,0,0.4); }
+      .squad-card h3 { margin: 0 0 10px; color: var(--kuning); }
+      .populer-card::before, .game-card::before, .squad-card::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 3px; background: linear-gradient(90deg,gold,transparent,gold,transparent,gold); background-size: 300% 300%; -webkit-mask: linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0; transition: opacity 0.3s ease-in-out; }
+      .populer-card:hover::before, .game-card:hover::before, .squad-card:hover::before { opacity: 1; animation: borderRun 4s linear infinite; }
+      @keyframes borderRun { 0%{background-position:0% 50%;}100%{background-position:300% 50%;} }
+      footer { background: var(--hitam); text-align: center; padding: 20px; color: var(--kuning); margin-top: 40px; }
+    </style>
+  </head>
+  <body>
+    <header><h1>MU STORE</h1><nav><a href="#">Beranda</a><a href="#">Promo</a><a href="#">Sewa Squad</a><a href="#">Riwayat</a><a href="#">Bantuan</a></nav></header>
+    <div class="slider"><div class="slides"><img src="BANNER/MU.png" alt="Banner 1"/><img src="BANNER/LIVE.jpg" alt="Banner 2"/><img src="BANNER/PUSH.jpg" alt="Banner 3"/></div></div>
+    <section><h2>🔥 Populer Sekarang</h2><div class="populer"><a href="game.html?name=MLBB" class="populer-card"><img src="POPULER/BNML.jpg" alt="MLBB"/><span>Mobile Legends</span></a><a href="game.html?name=FF" class="populer-card"><img src="POPULER/BNFF.jpg" alt="FF"/><span>Free Fire</span></a><a href="game.html?name=PUBG" class="populer-card"><img src="POPULER/BNPUBG.jpg" alt="PUBG"/><span>PUBG Mobile</span></a><a href="game.html?name=VL" class="populer-card"><img src="POPULER/BNVL.jpg" alt="Valorant"/><span>Valorant</span></a></div></section>
+    <section><h2>🎮 Semua Game</h2><div class="game-list"><a href="game.html?name=MLBB" class="game-card"><img src="GAME/ML.jpg" alt="MLBB"/><p>Mobile Legends</p><span class="sold">Terjual: 12.500+</span><span class="rating">⭐⭐⭐⭐⭐</span></a><a href="game.html?name=FF" class="game-card"><img src="GAME/FF.jpg" alt="FF"/><p>Free Fire</p><span class="sold">Terjual: 9.800+</span><span class="rating">⭐⭐⭐⭐</span></a><a href="game.html?name=PUBG" class="game-card"><img src="GAME/PUBG.jpg" alt="PUBG"/><p>PUBG Mobile</p><span class="sold">Terjual: 7.200+</span><span class="rating">⭐⭐⭐⭐⭐</span></a><a href="game.html?name=VL" class="game-card"><img src="GAME/VL.jpg" alt="Valorant"/><p>Valorant</p><span class="sold">Terjual: 5.400+</span><span class="rating">⭐⭐⭐⭐</span></a><a href="game.html?name=GS" class="game-card"><img src="GAME/GS.jpg" alt="Genshin"/><p>Genshin Impact</p><span class="sold">Terjual: 8.900+</span><span class="rating">⭐⭐⭐⭐⭐</span></a></div></section>
+    <section><h2>⚡️ Sewa Squad Verified</h2><div class="squad-list"><a href="squad.html?paket=5hari" class="squad-card"><h3>5 Hari</h3><p>Rp 15.000</p></a><a href="squad.html?paket=10hari" class="squad-card"><h3>10 Hari</h3><p>Rp 25.000</p></a><a href="squad.html?paket=30hari" class="squad-card"><h3>30 Hari</h3><p>Rp 70.000</p></a><a href="squad.html?paket=90hari" class="squad-card"><h3>90 Hari</h3><p>Rp 150.000</p></a></div></section>
+    <footer>© 2025 MU STORE • Semua Hak Dilindungi</footer>
+  </body>
+</html>
